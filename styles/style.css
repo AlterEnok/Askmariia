@@ -5,13 +5,75 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Anuphan", sans-serif;
     background: linear-gradient(124deg, rgba(104, 35, 135, 0.6) 0%, #87688e 37.9%, #865e5c 73.4%, rgba(158, 115, 100, 0.72) 92.4%);
 }
 
 .container {
     width: 1381px;
     margin: 0 auto;
+}
+
+/* Прелоадер - фон */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+/* Картинка прелоадера */
+.preloader img {
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    transform: scale(1.2);
+    animation: fadeIn 1.5s forwards ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Когда сайт загрузится, скроем прелоадер */
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Скрытие прелоадера */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Фон с видео */
@@ -24,11 +86,13 @@ body {
     text-align: center;
     color: white;
     overflow: hidden;
+    margin-bottom: 60px;
+    z-index: 10;
 
 }
 
 .background-video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -65,7 +129,6 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
-    /* 0.5 - полупрозрачный черный */
     z-index: -1;
 }
 
@@ -74,16 +137,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    background-color: transparent;
     top: 20px;
-    width: 90%;
+    left: 0;
+    width: 100%;
     padding: 0 40px;
-    z-index: 10;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(45, 32, 58, 0.95);
+    padding: 20px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: -3vh;
 }
 
 @media (min-width: 1900px) and (max-width: 3500px) {
     .navbar {
         width: 70%;
+        left: 10%;
+        margin-left: auto;
+
+
+    }
+
+    .navbar.scrolled {
+        width: 100%;
+        left: 0;
     }
 }
 
@@ -129,7 +211,12 @@ body {
 @media (min-width: 1900px) and (max-width: 3500px) {
     .lang-btn {
         position: relative;
-        right: -13vh;
+        right: auto;
+    }
+
+    .navbar .lang-btn {
+        position: relative;
+        margin-left: auto;
     }
 }
 
@@ -138,7 +225,7 @@ body {
     color: #fff;
 }
 
-/* Контент */
+
 .content {
     z-index: 10;
 }
@@ -216,20 +303,16 @@ body {
 
 .social-link i {
     color: black;
-    /* Цвет иконки по умолчанию */
     transition: all 0.3s ease;
-    /* Плавное изменение */
 }
 
 /* При наведении */
 .social-link:hover {
     background-color: #d8a7a7;
-    /* Меняем цвет фона */
 }
 
 .social-link:hover i {
     color: white;
-    /* Меняем цвет иконки */
 }
 
 
@@ -262,3 +345,190 @@ body {
         transform: translateY(-10px);
     }
 }
+
+/* ABOUT */
+.about {
+    padding: 80px 0;
+    background-color: #fdf8f6;
+}
+
+.about__title {
+    font-family: "Bilbo", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 125%;
+    letter-spacing: 0.36em;
+    position: relative;
+    top: -7vh;
+    color: #4a215d;
+    margin-bottom: 50px;
+}
+
+.about__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Текст идет в колонку */
+.about__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.about__year {
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 181%;
+    letter-spacing: 0.02em;
+    color: #4a215d;
+}
+
+.about__desc {
+    min-width: 605px;
+    min-height: 512px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.07em;
+    color: #333;
+}
+
+/* Фотки стоят рядом, но вторая выше */
+.about__images {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+}
+
+.about__img {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Основное фото */
+.about__img--large {
+    width: 260px;
+    position: relative;
+    top: 65px;
+}
+
+/* Маленькое фото поднимается вверх */
+.about__img--small {
+    width: 296px;
+    transform: translateY(-30px);
+}
+
+.about__services {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    min-width: 385px;
+    max-height: 237px;
+
+}
+
+.service {
+    display: flex;
+    align-items: flex-start;
+    /* Выровнял по верхнему краю */
+    gap: 15px;
+    /* Отступ между иконкой и текстом */
+    max-width: 300px;
+    text-align: left;
+    /* Текст остаётся слева */
+}
+
+.service__icon {
+    width: 89px;
+    height: 95px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: -5vh;
+    margin-right: 5vh;
+    /* Чтобы иконка не сжималась */
+}
+
+/* Анимация при скролле */
+.section-visible .about__services {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-visible .service {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Покачивание иконки при наведении */
+.service:hover .service__icon {
+    transform: translateX(-10px);
+}
+
+.service__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    min-width: 280px;
+    padding-bottom: 20px;
+    font-size: 26px;
+    line-height: 121%;
+    letter-spacing: -0.04em;
+    color: #632b5e;
+}
+
+.service__desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+}
+
+.service__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: -5vh;
+    /* Заголовок и описание в столбец */
+}
+
+/* ANIMATIONS */
+/* Начальные стили анимации */
+.about__title,
+.about__text,
+.about__images,
+.about__services {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease-out, transform 1.2s ease-out;
+}
+
+/* Когда элементы видны */
+.about__title.visible,
+.about__text.visible,
+.about__images.visible,
+.about__services.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.service__icon {
+    transition: transform 0.4s ease-in-out;
+}
+
+.service:hover .service__icon {
+    transform: rotate(-10deg) translateX(-10px);
+}
+
+/* Возвращение в исходное положение */
+.service:not(:hover) .service__icon {
+    transform: rotate(0deg) translateX(0);
+}
+
+/* ANIMATIONS */
