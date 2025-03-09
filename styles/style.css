@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Anuphan", sans-serif;
     background: linear-gradient(124deg, rgba(104, 35, 135, 0.6) 0%, #87688e 37.9%, #865e5c 73.4%, rgba(158, 115, 100, 0.72) 92.4%);
 }
+
 
 .container {
     width: 1381px;
@@ -157,8 +162,9 @@ body {
 @media (min-width: 1900px) and (max-width: 3500px) {
     .navbar {
         width: 70%;
-        left: 10%;
+        left: 18%;
         margin-left: auto;
+
 
 
     }
@@ -346,10 +352,21 @@ body {
     }
 }
 
+.floating-image {
+    position: absolute;
+    top: 150vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 /* ABOUT */
 .about {
     padding: 80px 0;
     background-color: #fdf8f6;
+    margin-bottom: 60px;
 }
 
 .about__title {
@@ -532,3 +549,257 @@ body {
 }
 
 /* ANIMATIONS */
+
+
+
+/* SERVICES */
+.services {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    background-color: #f9f2eb;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.services::before {
+    content: "SKIN \A BEAUTY \A CARE";
+    width: 1052px;
+    height: 414px;
+    font-family: "Anybody", sans-serif;
+    position: absolute;
+    top: 25%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    white-space: pre-line;
+    /* Позволяет переносить строки */
+    user-select: none;
+    pointer-events: none;
+    font-weight: 400;
+    font-size: 320px;
+    /* Подбери нужный размер */
+    line-height: 1.1;
+    letter-spacing: 0.17em;
+    color: rgba(82, 58, 103, 0.09);
+    text-align: center;
+
+}
+
+.services__subtitle {
+    font-family: "Bilbo", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    color: #e0b448;
+    background-color: #3e3e3e;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.services__title {
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 181%;
+    color: rgba(108, 59, 101, 0.86);
+    margin-bottom: 40px;
+}
+
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 90px;
+}
+
+
+.services__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+}
+
+
+.services__image {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.services__overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 350px;
+    height: 20px;
+    background: rgba(163, 163, 163, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.services__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: white;
+}
+
+
+.services__line {
+    margin-top: 1px;
+    position: absolute;
+    top: 4vh;
+    width: 137px;
+    height: 2px;
+    z-index: 2;
+    opacity: 1;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(227deg, rgba(248, 248, 248, 0.66) 0%, rgba(219, 166, 101, 0.66) 32.4%, rgba(219, 166, 101, 0.66) 62.4%, rgba(255, 255, 255, 0.66) 97.4%) !important;
+}
+
+
+.services__card:hover .services__image {
+    transform: scale(1.1);
+}
+
+.services__card:hover .services__overlay {
+    opacity: 1;
+}
+
+.services__footer {
+    border-radius: 63px;
+    width: 906px;
+    height: 276px;
+    margin: 50px auto 0;
+    background: #201820;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-top: -150px;
+    padding-top: 50px;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.services__footer-title {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+}
+
+.services__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Разделяем группы точек */
+    margin-bottom: 15px;
+}
+
+/* Группа точек */
+.dots-group {
+    display: flex;
+    gap: 25px;
+}
+
+/* Маленькие точки */
+.dot.small {
+    width: 9px;
+    height: 10px;
+}
+
+/* Средние точки */
+.dot.medium {
+    width: 15px;
+    height: 15px;
+}
+
+/* Большие точки */
+.dot.large {
+    width: 26px;
+    height: 24px;
+}
+
+/* Общие стили */
+.dot {
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Центральные большие точки */
+.dot.large {
+    opacity: 1;
+}
+
+.services__footer-subtitle {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.services__btn {
+    font-family: "Anton SC", sans-serif;
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 151%;
+    letter-spacing: 0.19em;
+    border-radius: 45px;
+    width: 197px;
+    height: 58px;
+    text-transform: uppercase;
+    background: #6a4b82;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.services__btn:hover {
+    background: #8a6aa6;
+}
+
+
+@media (max-width: 1024px) {
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services__background-text {
+        font-size: 60px;
+    }
+}

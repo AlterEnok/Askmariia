@@ -5,6 +5,28 @@ window.addEventListener("load", function () {
     }, 2000);
 });
 
+// Плавная прокрутка к секции
+
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault(); // Отмена стандартного поведения ссылки
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
 // ARROW-SCROLLDOWN
 document.addEventListener("DOMContentLoaded", function () {
     const scrollArrow = document.querySelector(".scroll-down");
@@ -31,6 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", handleScroll);
+});
+
+document.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+    const floatingImage = document.querySelector(".floating-image");
+
+    floatingImage.style.transform = `translate(-50%, ${scrollY * 0.3}px)`;
 });
 
 // Анимации для about
