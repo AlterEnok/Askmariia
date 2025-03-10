@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&family=Inria+Sans&family=Arbutus+Slab&family=Bilbo&family=Anybody&family=Koulen&family=Inter&family=Anton+SC&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -113,7 +114,11 @@
     </section>
 
     <section class="services" id="services">
-
+        <div class="services-bg-text">
+            <span class="word word-1">SKIN</span>
+            <span class="word word-2">BEAUTY</span>
+            <span class="word word-3">CARE</span>
+        </div>
         <div class="container">
             <p class="services__subtitle">SELF-CARE TARIFF</p>
             <h2 class="services__title">WHAT CAN WE HELP WITH?</h2>
@@ -188,6 +193,50 @@
         </div>
         <a href="#" class="services__btn">DIVE IN</a>
     </div>
+
+    <section class="reviews">
+        <p class="reviews__title services__subtitle">What say about Mariia</p>
+        <div class="container">
+            <div class="reviews__slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="reviews__slide swiper-slide">
+                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text"><strong>I really liked how you did it ❤️❤️ Thank you ❤️❤️</strong></p>
+                        <div class="reviews__author">
+                            <img src="img/reviews/reviews1.png" alt="Client" class="reviews__avatar">
+                        </div>
+                    </div>
+
+                    <div class="reviews__slide swiper-slide">
+                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text"><strong>With such a cosmetologist, you can definitely shine like a
+                                star!!! 😅😃😃😃✨✨✨✨ Restored lips and Botox are out there bringing BEAUTY to the
+                                world!!!
+                                💃💃💃💋💋💋 Thank you again, they are wonderful! ❤️❤️</strong></p>
+                        <div class="reviews__author">
+                            <img src="img/reviews/reviews2.png" alt="Client" class="reviews__avatar">
+                        </div>
+                    </div>
+
+                    <div class="reviews__slide swiper-slide">
+                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text"><strong>Mariia, saying that I’m thrilled with my reflection is an
+                                understatement, I just look stunning 😍 Thank you so much for my beauty! You truly have
+                                golden hands, thank you 🙏😘❤️ I am soooo happy!❤️</strong>
+                        </p>
+                        <div class="reviews__author">
+                            <img src="img/reviews/reviews3.png" alt="Client" class="reviews__avatar">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="reviews__button reviews__button--prev swiper-button-prev"></div>
+            <div class="reviews__button reviews__button--next swiper-button-next"></div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

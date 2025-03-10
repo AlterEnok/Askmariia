@@ -95,3 +95,17 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll(); // Проверка при загрузке
 });
 
+// REVIEWS SLIDER
+const swiper = new Swiper('.reviews__slider', {
+    navigation: {
+        nextEl: '.reviews__button--next',
+        prevEl: '.reviews__button--prev',
+    },
+    pagination: {
+        el: '.swiper-pagination', // Контейнер для точек
+        clickable: true, // Позволяет кликать по точкам для навигации
+    },
+    loop: true,
+    spaceBetween: 20,
+});
+
