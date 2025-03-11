@@ -11,6 +11,7 @@ html {
 body {
     font-family: "Anuphan", sans-serif;
     background: linear-gradient(124deg, rgba(104, 35, 135, 0.6) 0%, #87688e 37.9%, #865e5c 73.4%, rgba(158, 115, 100, 0.72) 92.4%);
+    overflow-x: hidden;
 }
 
 
@@ -185,6 +186,7 @@ body {
 @media (min-width: 1900px) and (max-width: 3500px) {
     .nav-menu {
         gap: clamp(50px, 15vw, 140px);
+
     }
 }
 
@@ -947,4 +949,302 @@ body {
 .swiper-pagination-bullet-active {
     background: #e0b448 !important;
     opacity: 1;
+}
+
+/* WORKING-HOURS */
+
+.working-hours {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 50px 20px;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+
+
+.working-hours__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+.working-hours__subtitle {
+    font-family: "Bilbo", sans-serif;
+    /* Использую --third-family */
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+    color: #945bc3;
+    margin-top: 60px;
+}
+
+@media (min-width: 1900px) and (max-width: 3500px) {
+    .working-hours__subtitle {
+        position: relative;
+        top: -3vh;
+    }
+}
+
+.working-hours__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+.working-hours__list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+
+
+}
+
+.working-hours__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.working-hours__day,
+.working-hours__time {
+    flex: 1;
+    /* Увеличь если нужно */
+}
+
+.working-hours__day {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 15px;
+
+}
+
+.working-hours__time {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.working-hours__note {
+    max-width: 556px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #181419;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    /* Добавил отступ вниз */
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.footer__social-link i {
+    display: block;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.footer__social-link:hover {
+    background-color: #b28bd2
+}
+
+.footer__social-link:hover i {
+    color: #181419;
+}
+
+.footer__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    /* Выравниваем текст по центру */
+}
+
+.footer__nav-link {
+    font-family: "Libre Caslon Text", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 123%;
+    letter-spacing: 0.25em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.footer__nav-link:hover {
+    color: #b28bd2;
+}
+
+.footer__content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.footer__title {
+    min-width: 476px;
+    font-family: "Antic Slab", sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 119%;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+}
+
+.footer__text {
+    min-width: 520px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+.footer__button {
+    font-family: "Inria Sans", sans-serif;
+    display: inline-block;
+    background-color: #3d3d3d;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 155%;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 10px 20px;
+    border-radius: 30px;
+    padding-top: 15px;
+    width: 211px;
+    height: 75px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.footer__button:hover {
+    background-color: #e6b69a;
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.footer__copyright {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    border-top: 1px solid rgba(163, 163, 163, 0.11);
+    padding-top: 20px;
+}
+
+/* SCROLL-UP */
+/* SCROLL-UP */
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -30%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Светлый фон */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    z-index: 100;
+    opacity: 0;
+    transition: bottom 0.4s, opacity 0.4s;
+}
+
+.scrollup:hover {
+    background-color: #4a215d;
+}
+
+/* Показываем кнопку при скролле ниже 350px */
+.show-scroll {
+    bottom: 1rem;
+    opacity: 1;
+}
+
+/* Стили для иконки */
+.scrollup__icon {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #b28bd2;
+    transition: color 0.3s;
+}
+
+.scrollup:hover .scrollup__icon {
+    color: #fff;
+    /* Новый цвет при наведении */
 }
