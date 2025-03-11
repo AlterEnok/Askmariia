@@ -23,28 +23,34 @@
     <header class="hero">
         <video autoplay loop muted class="background-video">
             <source src="img/Cosmetologyy.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <span data-key="video_not_supported">Your browser does not support the video tag.</span>
         </video>
         <div class="container">
             <nav class="navbar">
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="#about" class="nav-link">ABOUT US</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">SERVICES</a></li>
-                    <li class="nav-item"><a href="#reviews" class="nav-link">REVIEWS</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" data-key="nav_about">ABOUT US</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link" data-key="nav_services">SERVICES</a></li>
+                    <li class="nav-item"><a href="#reviews" class="nav-link" data-key="nav_reviews">REVIEWS</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav_contact">CONTACT</a></li>
                 </ul>
-                <button class="lang-btn">EN</button>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-key="lang_button">EN</button>
+                    <ul class="lang-menu">
+                        <li data-lang="en" data-key="lang_english">English</li>
+                        <li data-lang="ua" data-key="lang_ukrainian">Українська</li>
+                        <li data-lang="ru" data-key="lang_russian">Русский</li>
+                    </ul>
+                </div>
             </nav>
             <div class="content">
-                <h2 class="subtitle">Beauty by Mariia</h2>
-                <h1 class="title">ASKMARIIA</h1>
-                <button class="book-btn">BOOK</button>
+                <h1 class="title" data-key="hero_title">Beauty by Mariia</h1>
+                <button class="book-btn" data-key="book_button">BOOK</button>
             </div>
         </div>
         <div class="social-icons">
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" data-key="social_instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" data-key="social_tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link" data-key="social_linkedin"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="scroll-down">
             <svg width="54" height="52" class="scroll-arrow" viewBox="0 0 54 52" fill="none"
@@ -58,11 +64,11 @@
 
     <section class="about" id="about">
         <div class="container">
-            <h2 class="about__title">About Maria</h2>
+            <h2 class="about__title" data-key="about_title">About Maria</h2>
             <div class="about__content">
                 <div class="about__text">
-                    <span class="about__year">WORKING FROM 2024</span>
-                    <p class="about__desc">
+                    <span class="about__year" data-key="about_year">WORKING FROM 2024</span>
+                    <p class="about__desc" data-key="about_desc">
                         Maria Y. Askander, RN, BSN Aesthetic Nurse Specialist | Expert in Non-Surgical Cosmetic
                         Treatments.
                         Maria Y. Askander is an aesthetic nurse specializing in non-surgical treatments like
@@ -70,8 +76,8 @@
                         fillers, Sculptra, Radiesse, and thread lifts. She combines artistry with precision to enhance
                         natural beauty.
                         Originally from Ukraine, Maria holds a nursing degree and dental education. In the U.S., she
-                        became
-                        a Registered Nurse (RN), earned a BSN, and is now preparing for Nurse Practitioner (NP) school.
+                        became a Registered Nurse (RN), earned a BSN, and is now preparing for Nurse Practitioner (NP)
+                        school.
                         With a patient-focused approach, she prioritizes safety and delivers expert care with a
                         commitment
                         to excellence in aesthetics.
@@ -87,27 +93,33 @@
                 <div class="service">
                     <img src="img/icon1.svg" alt="Service Icon" class="service__icon">
                     <div class="service__content">
-                        <h4 class="service__title">Contour plastic surgery and facial correction</h4>
-                        <p class="service__desc">Enjoy a complete beauty experience with facial contouring, hydration,
-                            and
-                            lifting—all in one place. Save time and indulge in professional skincare.</p>
+                        <h4 class="service__title" data-key="service1_title">Contour plastic surgery and facial
+                            correction
+                        </h4>
+                        <p class="service__desc" data-key="service1_desc">
+                            Enjoy a complete beauty experience with facial contouring, hydration, and
+                            lifting—all in one place. Save time and indulge in professional skincare.
+                        </p>
                     </div>
                 </div>
                 <div class="service">
                     <img src="img/icon2.svg" alt="Service Icon" class="service__icon">
                     <div class="service__content">
-                        <h4 class="service__title">Skin rejuvenation and moisturizing</h4>
-                        <p class="service__desc">We use only certified, premium-quality products that are safe for your
-                            skin
-                            and provide long-lasting results. Your health is our top priority.</p>
+                        <h4 class="service__title" data-key="service2_title">Skin rejuvenation and moisturizing</h4>
+                        <p class="service__desc" data-key="service2_desc">
+                            We use only certified, premium-quality products that are safe for your skin
+                            and provide long-lasting results. Your health is our top priority.
+                        </p>
                     </div>
                 </div>
                 <div class="service">
                     <img src="img/icon3.svg" alt="Service Icon" class="service__icon">
                     <div class="service__content">
-                        <h4 class="service__title">Lifting and skin firming</h4>
-                        <p class="service__desc">Our specialists have years of expertise in cosmetology, master advanced
-                            rejuvenation techniques, and offer a personalized approach for every client.</p>
+                        <h4 class="service__title" data-key="service3_title">Lifting and skin firming</h4>
+                        <p class="service__desc" data-key="service3_desc">
+                            Our specialists have years of expertise in cosmetology, master advanced
+                            rejuvenation techniques, and offer a personalized approach for every client.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -116,19 +128,19 @@
 
     <section class="services" id="services">
         <div class="services-bg-text">
-            <span class="word word-1">SKIN</span>
-            <span class="word word-2">BEAUTY</span>
-            <span class="word word-3">CARE</span>
+            <span class="word word-1" data-key="services_bg1">SKIN</span>
+            <span class="word word-2" data-key="services_bg2">BEAUTY</span>
+            <span class="word word-3" data-key="services_bg3">CARE</span>
         </div>
         <div class="container">
-            <p class="services__subtitle">SELF-CARE TARIFF</p>
-            <h2 class="services__title">WHAT CAN WE HELP WITH?</h2>
+            <p class="services__subtitle" data-key="services_subtitle">SELF-CARE TARIFF</p>
+            <h2 class="services__title" data-key="services_title">WHAT CAN WE HELP WITH?</h2>
 
             <div class="services__grid">
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service1.jpg" alt="Lip augmentation" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Lip augmentation</p>
+                        <p class="services__text" data-key="service1">Lip augmentation</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
@@ -136,7 +148,7 @@
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service2.jpg" alt="Cheek filler" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Cheek filler</p>
+                        <p class="services__text" data-key="service2">Cheek filler</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
@@ -144,7 +156,7 @@
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service3.jpg" alt="Nasolabial fold correction" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Nasolabial fold correction</p>
+                        <p class="services__text" data-key="service3">Nasolabial fold correction</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
@@ -152,7 +164,7 @@
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service4.jpg" alt="Jawline correction" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Jawline correction</p>
+                        <p class="services__text" data-key="service4">Jawline correction</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
@@ -160,7 +172,7 @@
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service5.jpg" alt="Full face correction" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Full face correction</p>
+                        <p class="services__text" data-key="service5">Full face correction</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
@@ -168,62 +180,65 @@
                 <a href="#" class="services__card">
                     <img src="img/services-icons/service6.jpg" alt="Radiesse lifting" class="services__image">
                     <div class="services__overlay">
-                        <p class="services__text">Radiesse lifting</p>
+                        <p class="services__text" data-key="service6">Radiesse lifting</p>
                         <span class="services__line"></span>
                     </div>
                 </a>
             </div>
-
         </div>
-
     </section>
+
     <div class="services__footer">
-        <p class="services__footer-title">Look Beautiful</p>
+        <p class="services__footer-title" data-key="services_footer_title">Look Beautiful</p>
         <div class="services__pagination">
             <div class="dots-group">
                 <span class="dot small"></span>
                 <span class="dot medium"></span>
                 <span class="dot large"></span>
             </div>
-            <p class="services__footer-subtitle">Feel Beautiful</p>
+            <p class="services__footer-subtitle" data-key="services_footer_subtitle">Feel Beautiful</p>
             <div class="dots-group">
                 <span class="dot large"></span>
                 <span class="dot medium"></span>
                 <span class="dot small"></span>
             </div>
         </div>
-        <a href="#" class="services__btn">DIVE IN</a>
+        <a href="#" class="services__btn" data-key="services_btn">DIVE IN</a>
     </div>
 
-    <section class="reviews">
-        <p class="reviews__title services__subtitle">What say about Mariia</p>
+    <section class="reviews" id="reviews">
+        <p class="reviews__title services__subtitle" data-key="reviews_title">What say about Mariia</p>
         <div class="container">
             <div class="reviews__slider swiper">
                 <div class="swiper-wrapper">
                     <div class="reviews__slide swiper-slide">
-                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
-                        <p class="reviews__text"><strong>I really liked how you did it ❤️❤️ Thank you ❤️❤️</strong></p>
+                        <div class="reviews__stars" data-key="review1_stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text" data-key="review1_text">
+                            <strong>I really liked how you did it ❤️❤️ Thank you ❤️❤️</strong>
+                        </p>
                         <div class="reviews__author">
                             <img src="img/reviews/reviews1.png" alt="Client" class="reviews__avatar">
                         </div>
                     </div>
 
                     <div class="reviews__slide swiper-slide">
-                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
-                        <p class="reviews__text"><strong>With such a cosmetologist, you can definitely shine like a
-                                star!!! 😅😃😃😃✨✨✨✨ Restored lips and Botox are out there bringing BEAUTY to the
-                                world!!!
-                                💃💃💃💋💋💋 Thank you again, they are wonderful! ❤️❤️</strong></p>
+                        <div class="reviews__stars" data-key="review2_stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text" data-key="review2_text">
+                            <strong>With such a cosmetologist, you can definitely shine like a star!!! 😅😃😃😃✨✨✨✨
+                                Restored lips and Botox are out there bringing BEAUTY to the world!!! 💃💃💃💋💋💋
+                                Thank you again, they are wonderful! ❤️❤️</strong>
+                        </p>
                         <div class="reviews__author">
                             <img src="img/reviews/reviews2.png" alt="Client" class="reviews__avatar">
                         </div>
                     </div>
 
                     <div class="reviews__slide swiper-slide">
-                        <div class="reviews__stars">⭐⭐⭐⭐⭐</div>
-                        <p class="reviews__text"><strong>Mariia, saying that I’m thrilled with my reflection is an
-                                understatement, I just look stunning 😍 Thank you so much for my beauty! You truly have
-                                golden hands, thank you 🙏😘❤️ I am soooo happy!❤️</strong>
+                        <div class="reviews__stars" data-key="review3_stars">⭐⭐⭐⭐⭐</div>
+                        <p class="reviews__text" data-key="review3_text">
+                            <strong>Mariia, saying that I’m thrilled with my reflection is an understatement, I just
+                                look stunning 😍 Thank you so much for my beauty! You truly have golden hands,
+                                thank you 🙏😘❤️ I am soooo happy!❤️</strong>
                         </p>
                         <div class="reviews__author">
                             <img src="img/reviews/reviews3.png" alt="Client" class="reviews__avatar">
@@ -241,44 +256,48 @@
     <section class="working-hours">
         <video class="working-hours__video" autoplay loop muted>
             <source src="img/working-hours.mp4" type="video/mp4">
-
         </video>
         <div class="container">
-            <h3 class="working-hours__subtitle">Booking & Opening Hours</h3>
-            <h2 class="working-hours__title">Book an appointment at your convenience <br> and let us take care of you.
+            <h3 class="working-hours__subtitle" data-key="working_hours_subtitle">Booking & Opening Hours</h3>
+            <h2 class="working-hours__title" data-key="working_hours_title">
+                Book an appointment at your convenience <br> and let us take care of you.
             </h2>
 
             <ul class="working-hours__list">
                 <li class="working-hours__item">
-                    <span class="working-hours__day">Monday</span>
-                    <span class="working-hours__time">10:00 AM – 4:30 PM</span>
+                    <span class="working-hours__day" data-key="monday">Monday</span>
+                    <span class="working-hours__time" data-key="monday_hours">10:00 AM – 4:30 PM</span>
                 </li>
 
                 <li class="working-hours__item">
-                    <span class="working-hours__day">Wednesday</span>
-                    <span class="working-hours__time">10:00 AM – 4:30 PM</span>
+                    <span class="working-hours__day" data-key="wednesday">Wednesday</span>
+                    <span class="working-hours__time" data-key="wednesday_hours">10:00 AM – 4:30 PM</span>
                 </li>
+
                 <li class="working-hours__item">
-                    <span class="working-hours__day">Thursday</span>
-                    <span class="working-hours__time">10:00 AM – 4:30 PM</span>
+                    <span class="working-hours__day" data-key="thursday">Thursday</span>
+                    <span class="working-hours__time" data-key="thursday_hours">10:00 AM – 4:30 PM</span>
                 </li>
+
                 <li class="working-hours__item">
-                    <span class="working-hours__day">Saturday</span>
-                    <span class="working-hours__time">10:00 AM – 4:30 PM</span>
+                    <span class="working-hours__day" data-key="saturday">Saturday</span>
+                    <span class="working-hours__time" data-key="saturday_hours">10:00 AM – 4:30 PM</span>
                 </li>
+
                 <li class="working-hours__item">
-                    <span class="working-hours__day">Sunday</span>
-                    <span class="working-hours__time">10:00 AM – 4:30 PM</span>
+                    <span class="working-hours__day" data-key="sunday">Sunday</span>
+                    <span class="working-hours__time" data-key="sunday_hours">10:00 AM – 4:30 PM</span>
                 </li>
             </ul>
-            <p class="working-hours__note">
+
+            <p class="working-hours__note" data-key="working_hours_note">
                 If you need an appointment outside these hours, please contact us—we will do our best to accommodate
                 you.
             </p>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer__container">
             <div class="footer__left">
                 <div class="footer__social">
@@ -288,22 +307,29 @@
                 </div>
                 <nav class="footer__nav">
                     <ul class="footer__nav-list">
-                        <li class="footer__nav-item"><a href="#" class="footer__nav-link">About Us</a></li>
-                        <li class="footer__nav-item"><a href="#" class="footer__nav-link">Services</a></li>
-                        <li class="footer__nav-item"><a href="#" class="footer__nav-link">Reviews</a></li>
-                        <li class="footer__nav-item"><a href="#" class="footer__nav-link">Contact</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__nav-link" data-key="footer_about">About
+                                Us</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__nav-link"
+                                data-key="footer_services">Services</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__nav-link"
+                                data-key="footer_reviews">Reviews</a></li>
+                        <li class="footer__nav-item"><a href="#" class="footer__nav-link"
+                                data-key="footer_contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer__content">
-                <h2 class="footer__title">GET IN TOUCH</h2>
-                <p class="footer__text">Choose a time convenient for you and make an appointment with your favorite nail
-                    technician</p>
-                <a href="#" class="footer__button">Book Online</a>
+                <h2 class="footer__title" data-key="footer_title">GET IN TOUCH</h2>
+                <p class="footer__text" data-key="footer_text">
+                    Choose a time convenient for you and make an appointment with your favorite nail technician
+                </p>
+                <a href="#" class="footer__button" data-key="footer_button">Book Online</a>
             </div>
         </div>
         <div class="footer__bottom">
-            <p class="footer__copyright">© ASKMARIA. 2025. All rights reserved. Designed by NovaTeam</p>
+            <p class="footer__copyright" data-key="footer_copyright">
+                © ASKMARIA. 2025. All rights reserved. Designed by NovaTeam
+            </p>
         </div>
     </footer>
 
