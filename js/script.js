@@ -6,13 +6,37 @@ window.addEventListener("load", function () {
 });
 
 // Плавная прокрутка к секции
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
 
+    function handleScroll() {
+        if (window.scrollY > window.innerHeight * 0.1) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+});
+
+// PRELOADER
+window.addEventListener("load", function () {
+    setTimeout(() => {
+        const preloader = document.querySelector(".preloader");
+        if (preloader) {
+            preloader.classList.add("hidden");
+        }
+    }, 2000);
+});
+
+// Плавная прокрутка к секции
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".nav-link");
 
     links.forEach(link => {
         link.addEventListener("click", function (e) {
-            e.preventDefault(); // Отмена стандартного поведения ссылки
+            e.preventDefault();
 
             const targetId = this.getAttribute("href").substring(1);
             const targetElement = document.getElementById(targetId);
@@ -31,35 +55,61 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const scrollArrow = document.querySelector(".scroll-down");
 
-    scrollArrow.addEventListener("click", function () {
-        const nextSection = document.querySelector(".hero").nextElementSibling;
+    if (scrollArrow) {
+        scrollArrow.addEventListener("click", function () {
+            const nextSection = document.querySelector(".hero")?.nextElementSibling;
 
-        if (nextSection) {
-            nextSection.scrollIntoView({ behavior: "smooth" });
-        }
-    });
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
 });
 
-// SCROLLBAR
+// BURGER-MENU
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
+    const burgerBtn = document.querySelector('.burger-btn');
+    const burgerNav = document.querySelector('.burger-nav');
+
+    if (burgerBtn && burgerNav) {
+        burgerBtn.addEventListener('click', function () {
+            burgerNav.classList.toggle('show');
+            burgerBtn.classList.toggle('_active');
+        });
+    } else {
+        console.error("Ошибка: не найден .burger-btn или .burger-nav");
+    }
+});
+
+// Анимации для about
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector(".about");
+    const aboutTitle = document.querySelector(".about__title");
+    const aboutText = document.querySelector(".about__text");
+    const aboutImages = document.querySelector(".about__images");
+    const aboutServices = document.querySelector(".about__services");
+
+    if (!aboutSection) {
+        console.error("Ошибка: не найдена секция about! Проверь класс в HTML.");
+        return;
+    }
+
+    function isElementInViewport(el, threshold = 0.75) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight * threshold;
+    }
 
     function handleScroll() {
-        if (window.scrollY > window.innerHeight * 0.1) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
+        if (isElementInViewport(aboutSection, 0.9)) {
+            setTimeout(() => aboutTitle?.classList.add("visible"), 200);
+            setTimeout(() => aboutText?.classList.add("visible"), 400);
+            setTimeout(() => aboutImages?.classList.add("visible"), 600);
+            setTimeout(() => aboutServices?.classList.add("visible"), 800);
         }
     }
 
     window.addEventListener("scroll", handleScroll);
-});
-
-document.addEventListener("scroll", function () {
-    const scrollY = window.scrollY;
-    const floatingImage = document.querySelector(".floating-image");
-
-    floatingImage.style.transform = `translate(-50%, ${scrollY * 0.3}px)`;
+    handleScroll();
 });
 
 // LANGUAGE CHOOSE
