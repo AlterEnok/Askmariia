@@ -860,12 +860,32 @@ body {
         height: auto;
     }
 
+    .services__line {
+        top: -2vh;
+    }
+
     .service__title {
         font-weight: 600;
         font-size: clamp(12px, 1.5vw, 14px);
         line-height: 121%;
         letter-spacing: -0.04em;
         min-width: 10%;
+    }
+
+    .word-1 {
+        position: relative;
+        top: -41vh;
+    }
+
+    .word-2 {
+        position: relative;
+        top: 4vh;
+        letter-spacing: 0;
+    }
+
+    .word-3 {
+        position: relative;
+        top: 23vh;
     }
 
     .service__content {
@@ -885,10 +905,10 @@ body {
         padding: 40px 0;
     }
 
-    .about__year {
+    /* .about__year {
 
         margin-right: 29vh;
-    }
+    } */
 
     .about__images {
         flex-direction: row;
@@ -906,10 +926,10 @@ body {
         font-size: clamp(24px, 5vw, 28px);
         letter-spacing: 0.1em;
         margin-bottom: 30px;
-        margin-left: -13vh;
+        margin-left: -12vh;
         margin-top: -1vh;
         position: relative;
-        top: 4vw;
+        top: -1vw;
     }
 
     .about__text {
@@ -965,6 +985,9 @@ body {
         line-height: 106%;
         letter-spacing: -0.04em;
     }
+
+
+
 }
 
 /* ADAPTIVE */
@@ -1314,6 +1337,29 @@ body {
         position: relative;
         top: 13vh;
     }
+
+    .services__pagination {
+        gap: 24px;
+    }
+
+    .dots-group {
+        gap: 21px;
+    }
+
+    .services__footer-title {
+        font-size: 23px;
+    }
+
+    .services__footer-subtitle {
+        font-size: 22px;
+    }
+
+    .services__btn {
+        width: clamp(146px, 35vw, 193px);
+        height: clamp(41px, 8vw, 55px);
+        font-size: clamp(12px, -1vw, 11px);
+    }
+
 }
 
 
@@ -1444,6 +1490,36 @@ body {
     opacity: 1;
 }
 
+@media(max-width:1024px) {
+    .reviews__title {
+        position: relative;
+        top: -13vh;
+    }
+
+    .reviews__button--prev {
+        left: 31px !important;
+    }
+
+    .reviews__button--next {
+        right: 20px !important;
+    }
+}
+
+@media(max-width:768px) {
+    .reviews__title {
+        position: relative;
+        top: -18vh;
+    }
+
+    .reviews__button--prev {
+        display: none !important;
+    }
+
+    .reviews__button--next {
+        display: none !important;
+    }
+}
+
 /* WORKING-HOURS */
 
 .working-hours {
@@ -1451,14 +1527,13 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: clamp(30px, 5vw, 50px) 20px;
     color: #fff;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-bottom: 100px;
+    padding-bottom: clamp(50px, 8vh, 100px);
 }
 
 
@@ -1477,13 +1552,12 @@ body {
 
 .working-hours__subtitle {
     font-family: "Bilbo", sans-serif;
-    /* Использую --third-family */
     font-weight: 400;
-    font-size: 36px;
+    font-size: clamp(24px, 3vw, 36px);
     line-height: 125%;
     letter-spacing: 0.02em;
     color: #945bc3;
-    margin-top: 60px;
+    margin-top: clamp(30px, 5vw, 60px);
 }
 
 @media (min-width: 1900px) and (max-width: 3500px) {
@@ -1491,14 +1565,16 @@ body {
         position: relative;
         top: -3vh;
     }
+
+
 }
 
 .working-hours__title {
     font-weight: 600;
-    font-size: 40px;
+    font-size: clamp(28px, 4vw, 40px);
     line-height: 130%;
     letter-spacing: 0.02em;
-    margin-bottom: 20px;
+    margin-bottom: clamp(10px, 3vw, 20px);
 }
 
 .working-hours__list {
@@ -1514,9 +1590,8 @@ body {
 .working-hours__item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: clamp(5px, 2vw, 10px) 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
 }
 
 .working-hours__day,
@@ -1527,17 +1602,16 @@ body {
 
 .working-hours__day {
     font-weight: 400;
-    font-size: 28px;
+    font-size: clamp(18px, 3vw, 28px);
     line-height: 130%;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.6);
-    margin: 15px;
-
+    margin: clamp(5px, 2vw, 15px);
 }
 
 .working-hours__time {
     font-weight: 400;
-    font-size: 28px;
+    font-size: clamp(18px, 3vw, 28px);
     line-height: 130%;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.6);
@@ -1546,19 +1620,65 @@ body {
 .working-hours__note {
     max-width: 556px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: clamp(10px, 3vw, 20px);
     font-weight: 400;
-    font-size: 24px;
+    font-size: clamp(16px, 2.5vw, 24px);
     line-height: 130%;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 37px;
 }
 
+@media(max-width:1024px) {
+    .working-hours__list {
+        width: 755px;
+    }
+
+    .working-hours__subtitle {
+        font-size: clamp(37px, 3vw, 36px);
+        position: relative;
+        top: -6vw;
+        left: 5vw;
+    }
+
+
+
+    .working-hours__note {
+        position: relative;
+        top: 11vw;
+        max-width: 571px
+    }
+}
+
+@media(max-width:767px) {
+    .working-hours__subtitle {
+        font-size: clamp(36px, 3vw, 36px);
+        margin-bottom: 7vw;
+        margin-left: 6vw;
+    }
+
+    .working-hours__title {
+        font-size: clamp(26px, 4vw, 40px);
+        width: 406px;
+        height: 138px;
+    }
+
+    .working-hours__list {
+        width: 360px;
+    }
+
+    .working-hours__note {
+        position: relative;
+        top: 9vw;
+    }
+}
+
+/* FOOTER */
 /* FOOTER */
 .footer {
     background-color: #181419;
     color: #fff;
-    padding: 40px 20px;
+    padding: clamp(20px, 4vw, 40px) clamp(10px, 4vw, 20px);
 }
 
 .footer__container {
@@ -1570,55 +1690,74 @@ body {
     flex-wrap: wrap;
 }
 
-.footer__left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Для мобильных экранов меняем порядок */
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
+/* Контент (заголовок + текст) */
+.footer__content {
+    text-align: center;
+    max-width: clamp(250px, 90vw, 400px);
+}
+
+/* Заголовок */
+.footer__title {
+    font-family: "Antic Slab", sans-serif;
+    font-weight: 400;
+    font-size: clamp(28px, 6vw, 64px);
+    line-height: 119%;
+    letter-spacing: 0.02em;
+    margin-bottom: clamp(5px, 2vw, 10px);
+}
+
+/* Текст */
+.footer__text {
+    font-weight: 300;
+    font-size: clamp(14px, 3vw, 22px);
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    margin-bottom: clamp(10px, 3vw, 20px);
+}
+
+/* Социальные сети */
 .footer__social {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    /* Добавил отступ вниз */
+    gap: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(15px, 3vw, 20px);
+    justify-content: center;
 }
 
 .footer__social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     color: #fff;
     transition: background 0.3s, color 0.3s;
-    width: 40px;
-    height: 40px;
+    width: clamp(30px, 6vw, 40px);
+    height: clamp(30px, 6vw, 40px);
     border-radius: 50%;
     text-decoration: none;
 }
 
-.footer__social-link i {
-    display: block;
-    transition: color 0.3s;
-    line-height: 1;
-}
-
 .footer__social-link:hover {
-    background-color: #b28bd2
+    background-color: #b28bd2;
 }
 
-.footer__social-link:hover i {
-    color: #181419;
-}
-
+/* Навигация */
 .footer__nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: clamp(15px, 4vw, 30px);
     text-align: center;
-    /* Выравниваем текст по центру */
 }
 
 .footer__nav-link {
@@ -1626,10 +1765,8 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 123%;
+    font-size: clamp(16px, 2vw, 20px);
     letter-spacing: 0.25em;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -1637,43 +1774,18 @@ body {
     color: #b28bd2;
 }
 
-.footer__content {
-    text-align: center;
-    max-width: 400px;
-}
-
-.footer__title {
-    min-width: 476px;
-    font-family: "Antic Slab", sans-serif;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 119%;
-    letter-spacing: 0.02em;
-    margin-bottom: 10px;
-}
-
-.footer__text {
-    min-width: 520px;
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 130%;
-    letter-spacing: 0.02em;
-    margin-bottom: 20px;
-}
-
+/* Кнопка */
 .footer__button {
     font-family: "Inria Sans", sans-serif;
     display: inline-block;
     background-color: #3d3d3d;
     font-weight: 700;
-    font-size: 19px;
-    line-height: 155%;
+    font-size: clamp(14px, 2vw, 19px);
     color: rgba(255, 255, 255, 0.65);
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 15px) clamp(15px, 4vw, 20px);
     border-radius: 30px;
-    padding-top: 15px;
-    width: 211px;
-    height: 75px;
+    width: clamp(150px, 40vw, 207px);
+    height: clamp(50px, 12vw, 60px);
     text-decoration: none;
     transition: background 0.3s;
 }
@@ -1682,21 +1794,45 @@ body {
     background-color: #e6b69a;
 }
 
+/* Копирайт */
 .footer__bottom {
     text-align: center;
-    margin-top: 30px;
-    font-size: 12px;
+    margin-top: clamp(15px, 3vw, 30px);
+    font-size: clamp(10px, 2vw, 12px);
     opacity: 0.7;
 }
 
 .footer__copyright {
     font-family: "Inria Sans", sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: clamp(14px, 2.5vw, 20px);
     line-height: 120%;
     letter-spacing: -0.04em;
     border-top: 1px solid rgba(163, 163, 163, 0.11);
-    padding-top: 20px;
+    padding-top: clamp(10px, 2vw, 20px);
+}
+
+@media(max-width:1024px) {
+    .footer__nav {
+        margin-bottom: 13px;
+    }
+
+    .footer__button {
+        width: clamp(150px, 40vw, 201px);
+        height: clamp(50px, 12vw, 57px);
+    }
+}
+
+@media(max-width:767px) {
+    .footer__nav {
+        margin-bottom: 17px;
+    }
+
+    .footer__button {
+        font-size: clamp(12px, 2vw, 19px);
+        width: clamp(144px, 37vw, 206px);
+        height: clamp(43px, 7vw, 70px);
+    }
 }
 
 /* SCROLL-UP */
