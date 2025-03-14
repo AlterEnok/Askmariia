@@ -906,6 +906,8 @@ body {
         margin-bottom: 30px;
         margin-left: -13vh;
         margin-top: -1vh;
+        position: relative;
+        top: 4vw;
     }
 
     .about__text {
