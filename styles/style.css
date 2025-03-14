@@ -134,9 +134,11 @@ body {
 
 
     .background-video {
-        min-height: 110vh;
-        object-fit: inherit;
-        top: -5vh;
+        min-height: 100vh;
+        /* Убираем 110vh */
+        object-fit: cover;
+        /* cover вместо inherit */
+        top: 0;
     }
 
 
