@@ -761,8 +761,9 @@ body {
     }
 
     .about__desc {
-        min-width: 100%;
-        max-width: 90%;
+
+        min-width: 71%;
+        max-width: 76%;
         font-size: clamp(16px, 2vw, 20px);
         text-align: center;
         margin-top: clamp(40px, 9vh, 70px);
@@ -770,7 +771,7 @@ body {
 
     .about__images {
         display: flex;
-        flex-direction: column;
+
         align-items: center;
         gap: clamp(5px, 1.5vw, 10px);
         max-width: 90%;
@@ -780,10 +781,17 @@ body {
 
     .about__img--large,
     .about__img--small {
-        width: clamp(200px, 66%, 300px);
+        width: clamp(156px, 59%, 300px);
         max-width: 300px;
         top: 0;
+        right: 12vw;
         transform: none;
+    }
+
+    .about__img--small {
+        top: -14vw;
+        right: 7vh;
+        position: relative;
     }
 
     .about__services {
@@ -807,12 +815,12 @@ body {
     }
 
     .about__title {
-        font-size: clamp(20px, 5vw, 28px);
+        font-size: clamp(20px, 5vw, 38px);
         text-align: justify;
         position: relative;
         top: clamp(-5px, -1vh, 10px);
         margin-bottom: clamp(20px, 5vw, 55px);
-        right: clamp(-100px, -28vh, -200px);
+        right: clamp(-238px, -41vh, -203px);
     }
 
     .about__text {
@@ -877,7 +885,7 @@ body {
 
     .about__year {
 
-        margin-right: 19vh;
+        margin-right: 29vh;
     }
 
     .about__images {
@@ -896,22 +904,31 @@ body {
         font-size: clamp(24px, 5vw, 28px);
         letter-spacing: 0.1em;
         margin-bottom: 30px;
-        margin-left: 6vh;
-        margin-top: 2vh;
+        margin-left: -13vh;
+        margin-top: -1vh;
+    }
+
+    .about__text {
+        right: 17px;
+        top: clamp(-90px, -10vh, -30px);
     }
 
     .about__img--large {
-        width: 47%;
+        width: 35%;
+        right: -1vw;
+        top: -4vw
     }
 
     .about__img--small {
-        width: 45%;
+        width: 35%;
+        left: 8vw;
+        top: -18vw
     }
 
     .about__desc {
         font-size: clamp(10px, 2vw, 16px);
         line-height: 1.2;
-        max-width: 360px;
+        min-width: 385px;
         padding: 0px 20px;
         margin-left: 1vh;
     }
@@ -932,15 +949,15 @@ body {
     .service__icon {
         width: clamp(50px, 8vw, 60px);
         position: relative;
-        top: -5vh;
+        top: -3vh;
     }
 
     .service__title {
-        font-size: clamp(18px, 3vw, 20px);
+        font-size: clamp(17px, 3vw, 20px);
     }
 
     .service__desc {
-        font-size: clamp(12px, 2vw, 13px);
+        font-size: clamp(10px, 2vw, 12px);
         line-height: 106%;
         letter-spacing: -0.04em;
     }
