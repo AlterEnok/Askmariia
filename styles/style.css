@@ -236,6 +236,12 @@ body {
     display: none;
 }
 
+.active-link {
+    color: #945bc3;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
 
 
 /* Показываем бургер-меню только на мобильных */
@@ -523,6 +529,45 @@ body {
     color: white;
 }
 
+@media (max-width: 1024px) {
+    .social-icons {
+        display: none;
+    }
+}
+
+/* Соцсети в бургер-меню */
+.social-icons-burger {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.social-icons-burger .social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons-burger .social-link i {
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.social-icons-burger .social-link:hover {
+    background-color: #d8a7a7;
+}
+
+.social-icons-burger .social-link:hover i {
+    color: white;
+}
 
 
 /* Анимация стрелки вниз */
@@ -1253,6 +1298,12 @@ body {
     background: #8a6aa6;
 }
 
+@media (max-width: 1336px) {
+    .services__line {
+        top: 2vh;
+    }
+}
+
 @media (max-width: 1024px) {
     .services {
         grid-template-columns: repeat(3, 1fr);
@@ -1508,7 +1559,7 @@ body {
 @media(max-width:768px) {
     .reviews__title {
         position: relative;
-        top: -18vh;
+        top: -20vh;
     }
 
     .reviews__button--prev {
@@ -1644,6 +1695,7 @@ body {
 
 
     .working-hours__note {
+        font-size: 21px;
         position: relative;
         top: 11vw;
         max-width: 571px
@@ -1651,16 +1703,23 @@ body {
 }
 
 @media(max-width:767px) {
+    .working-hours__container {
+        width: 107%;
+    }
+
     .working-hours__subtitle {
         font-size: clamp(36px, 3vw, 36px);
         margin-bottom: 7vw;
         margin-left: 6vw;
+        position: relative;
+        top: 5vw;
     }
 
     .working-hours__title {
-        font-size: clamp(26px, 4vw, 40px);
-        width: 406px;
+        font-size: clamp(19px, 4vw, 40px);
         height: 138px;
+        position: relative;
+        top: 10vw;
     }
 
     .working-hours__list {
@@ -1668,8 +1727,10 @@ body {
     }
 
     .working-hours__note {
+        font-size: 15px;
         position: relative;
         top: 9vw;
+        left: 2vw;
     }
 }
 

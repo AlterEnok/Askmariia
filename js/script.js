@@ -70,15 +70,69 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const burgerBtn = document.querySelector('.burger-btn');
     const burgerNav = document.querySelector('.burger-nav');
+    const navLinks = document.querySelectorAll('.burger-nav a, .nav-menu a');
+    const sections = document.querySelectorAll('section[id]');
 
+    // Функция переключения бургер-меню
     if (burgerBtn && burgerNav) {
         burgerBtn.addEventListener('click', function () {
-            burgerNav.classList.toggle('show');
+            const isOpen = burgerNav.classList.toggle('show');
             burgerBtn.classList.toggle('_active');
+
+            document.body.style.overflow = isOpen ? "hidden" : "";
+            document.documentElement.style.overflow = isOpen ? "hidden" : "";
         });
-    } else {
-        console.error("Ошибка: не найден .burger-btn или .burger-nav");
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    burgerNav.classList.remove('show');
+                    burgerBtn.classList.remove('_active');
+                    document.body.style.overflow = "";
+                    document.documentElement.style.overflow = "";
+
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     }
+
+    // Функция для подсветки активного пункта меню при скролле
+    const scrollActive = () => {
+        const scrollY = window.scrollY;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - window.innerHeight / 2;
+            const sectionId = current.getAttribute('id');
+
+            const menuLinks = document.querySelectorAll(`.nav-menu a[href="#${sectionId}"], .burger-nav a[href="#${sectionId}"]`);
+
+            menuLinks.forEach(link => {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    link.classList.add('active-link');
+                } else {
+                    link.classList.remove('active-link');
+                }
+            });
+        });
+
+        // Проверка последней секции (контакт)
+        const lastSection = document.querySelector('section:last-of-type');
+        const lastMenuLinks = document.querySelectorAll('.nav-menu a[href="#contact"], .burger-nav a[href="#contact"]');
+
+        if ((window.innerHeight + scrollY) >= document.body.offsetHeight - 10) {
+            lastMenuLinks.forEach(link => link.classList.add('active-link'));
+        } else {
+            lastMenuLinks.forEach(link => link.classList.remove('active-link'));
+        }
+    };
+
+    window.addEventListener('scroll', scrollActive);
 });
 
 // Анимации для about
