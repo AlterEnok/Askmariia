@@ -7,8 +7,8 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    /* Запрещаем горизонтальный скролл */
     max-width: 100%;
+
 }
 
 body {
@@ -21,7 +21,32 @@ body {
 
 .container {
     width: 1381px;
+    height: auto;
     margin: 0 auto;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f5e8e2;
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #453552;
+    border-radius: 10px;
+
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6a4b7a;
 }
 
 /* Прелоадер - фон */
@@ -31,7 +56,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: purple;
+    background: rgb(207, 39, 207);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +86,7 @@ body {
     }
 }
 
-/* Когда сайт загрузится, скроем прелоадер */
+/* Когда сайт загрузится, скрываю прелоадер */
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
@@ -135,9 +160,7 @@ body {
 
     .background-video {
         min-height: 100vh;
-        /* Убираем 110vh */
         object-fit: cover;
-        /* cover вместо inherit */
         top: 0;
     }
 
@@ -156,7 +179,7 @@ body {
     z-index: -1;
 }
 
-/* Навигация */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -244,7 +267,7 @@ body {
 
 
 
-/* Показываем бургер-меню только на мобильных */
+/* Бургер-меню только на мобильных */
 @media (max-width: 767px) {
     .nav-menu {
         display: none;
@@ -310,12 +333,10 @@ body {
         transform: rotate(90deg);
         color: #000;
         z-index: 20;
-        /* Цвет для активной иконки */
     }
 
     .burger-btn .fas:before {
         content: "\f0c9";
-        /* Значение для иконки 'fa-bars' */
         transition: all 0.3s ease;
     }
 
@@ -464,12 +485,15 @@ body {
 }
 
 .book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     border-radius: 35px;
     width: clamp(150px, 20vw, 227px);
     height: clamp(50px, 7vw, 66px);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background: #e6b69a;
-    border: none;
     color: #fff;
     font-weight: 400;
     font-family: "Anton SC", sans-serif;
@@ -482,12 +506,10 @@ body {
     margin-top: 10px;
     transition: .3s;
     z-index: 20;
-
 }
 
 .book-btn:hover {
     background: #453552;
-
 }
 
 /* Соц. иконки */
@@ -520,7 +542,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* При наведении */
+
 .social-link:hover {
     background-color: #d8a7a7;
 }
@@ -632,7 +654,7 @@ body {
     gap: clamp(20px, 5vw, 50px);
 }
 
-/* Текст идет в колонку */
+
 .about__text {
     display: flex;
     flex-direction: column;
@@ -659,7 +681,7 @@ body {
     color: #333;
 }
 
-/* Фотки стоят рядом, но вторая выше */
+
 .about__images {
     display: flex;
     align-items: flex-start;
@@ -672,14 +694,14 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Основное фото */
+
 .about__img--large {
     width: clamp(150px, 30vw, 260px);
     position: relative;
     top: clamp(20px, 5vw, 65px);
 }
 
-/* Маленькое фото поднимается вверх */
+
 .about__img--small {
     width: clamp(150px, 35vw, 296px);
     transform: translateY(-30px);
@@ -752,11 +774,10 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: -5vh;
-    /* Заголовок и описание в столбец */
 }
 
 /* ANIMATIONS */
-/* Начальные стили анимации */
+
 .about__title,
 .about__text,
 .about__images,
@@ -789,9 +810,8 @@ body {
 }
 
 /* ANIMATIONS */
+
 /* ADAPTIVE */
-
-
 
 @media (max-width: 1024px) {
     .container {
@@ -950,11 +970,6 @@ body {
         padding: 40px 0;
     }
 
-    /* .about__year {
-
-        margin-right: 29vh;
-    } */
-
     .about__images {
         flex-direction: row;
         align-items: center;
@@ -1031,7 +1046,21 @@ body {
         letter-spacing: -0.04em;
     }
 
+    @media (max-width: 375px) {
+        .about__content {
+            margin-left: -4vw;
+            text-align: center;
+            align-items: center;
+        }
 
+        .about__title.visible {
+            margin-left: -17vh;
+        }
+
+        .about__year {
+            margin-left: clamp(10px, 5vh, 30px);
+        }
+    }
 
 }
 
@@ -1190,7 +1219,7 @@ body {
 
 .services__card:hover .services__line {
     width: 96%;
-    /* Увеличиваем ширину линии при наведении */
+
 }
 
 .services__card:hover .services__overlay {
@@ -1226,23 +1255,22 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    /* Разделяем группы точек */
     margin-bottom: 15px;
 }
 
-/* Группа точек */
+
 .dots-group {
     display: flex;
     gap: 25px;
 }
 
-/* Маленькие точки */
+
 .dot.small {
     width: 9px;
     height: 10px;
 }
 
-/* Средние точки */
+
 .dot.medium {
     width: 15px;
     height: 15px;
@@ -1410,9 +1438,7 @@ body {
         height: clamp(41px, 8vw, 55px);
         font-size: clamp(12px, -1vw, 11px);
     }
-
 }
-
 
 /* REVIEWS */
 
@@ -1560,6 +1586,7 @@ body {
     .reviews__title {
         position: relative;
         top: -20vh;
+        font-size: 32px;
     }
 
     .reviews__button--prev {
@@ -1568,6 +1595,12 @@ body {
 
     .reviews__button--next {
         display: none !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .reviews__title {
+        font-size: 32px;
     }
 }
 
@@ -1616,8 +1649,6 @@ body {
         position: relative;
         top: -3vh;
     }
-
-
 }
 
 .working-hours__title {
@@ -1634,8 +1665,6 @@ body {
     margin: 20px 0;
     width: 100%;
     max-width: 1200px;
-
-
 }
 
 .working-hours__item {
@@ -1648,7 +1677,6 @@ body {
 .working-hours__day,
 .working-hours__time {
     flex: 1;
-    /* Увеличь если нужно */
 }
 
 .working-hours__day {
@@ -1692,8 +1720,6 @@ body {
         left: 5vw;
     }
 
-
-
     .working-hours__note {
         font-size: 21px;
         position: relative;
@@ -1734,7 +1760,17 @@ body {
     }
 }
 
-/* FOOTER */
+@media (max-width: 375px) {
+    .working-hours__list {
+        width: 340px;
+    }
+
+    .working-hours__note {
+        top: 7vw;
+    }
+}
+
+
 /* FOOTER */
 .footer {
     background-color: #181419;
@@ -1751,22 +1787,12 @@ body {
     flex-wrap: wrap;
 }
 
-/* Для мобильных экранов меняем порядок */
-@media (max-width: 768px) {
-    .footer__container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-/* Контент (заголовок + текст) */
 .footer__content {
     text-align: center;
     max-width: clamp(250px, 90vw, 400px);
 }
 
-/* Заголовок */
+
 .footer__title {
     font-family: "Antic Slab", sans-serif;
     font-weight: 400;
@@ -1776,7 +1802,7 @@ body {
     margin-bottom: clamp(5px, 2vw, 10px);
 }
 
-/* Текст */
+
 .footer__text {
     font-weight: 300;
     font-size: clamp(14px, 3vw, 22px);
@@ -1785,7 +1811,7 @@ body {
     margin-bottom: clamp(10px, 3vw, 20px);
 }
 
-/* Социальные сети */
+
 .footer__social {
     display: flex;
     gap: clamp(10px, 2vw, 15px);
@@ -1810,7 +1836,7 @@ body {
     background-color: #b28bd2;
 }
 
-/* Навигация */
+
 .footer__nav-list {
     list-style: none;
     padding: 0;
@@ -1835,7 +1861,7 @@ body {
     color: #b28bd2;
 }
 
-/* Кнопка */
+
 .footer__button {
     font-family: "Inria Sans", sans-serif;
     display: inline-block;
@@ -1855,7 +1881,7 @@ body {
     background-color: #e6b69a;
 }
 
-/* Копирайт */
+
 .footer__bottom {
     text-align: center;
     margin-top: clamp(15px, 3vw, 30px);
@@ -1885,6 +1911,12 @@ body {
 }
 
 @media(max-width:767px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .footer__nav {
         margin-bottom: 17px;
     }
@@ -1897,13 +1929,11 @@ body {
 }
 
 /* SCROLL-UP */
-/* SCROLL-UP */
 .scrollup {
     position: fixed;
     right: 1rem;
     bottom: -30%;
     background-color: rgba(255, 255, 255, 0.8);
-    /* Светлый фон */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -1920,13 +1950,13 @@ body {
     background-color: #4a215d;
 }
 
-/* Показываем кнопку при скролле ниже 350px */
+
 .show-scroll {
     bottom: 1rem;
     opacity: 1;
 }
 
-/* Стили для иконки */
+
 .scrollup__icon {
     font-size: 1.8rem;
     text-decoration: none;
@@ -1936,5 +1966,4 @@ body {
 
 .scrollup:hover .scrollup__icon {
     color: #fff;
-    /* Новый цвет при наведении */
 }
