@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// BURGER-MENU
 document.addEventListener("DOMContentLoaded", function () {
     const burgerBtn = document.querySelector('.burger-btn');
     const burgerNav = document.querySelector('.burger-nav');
@@ -85,8 +84,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
+                const targetHref = this.getAttribute('href');
+
+
+                if (targetHref.startsWith('http') || targetHref.startsWith('https')) {
+                    burgerNav.classList.remove('show');
+                    burgerBtn.classList.remove('_active');
+                    document.body.style.overflow = "";
+                    document.documentElement.style.overflow = "";
+                    return;
+                }
+
+
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
+                const targetId = targetHref.substring(1);
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {

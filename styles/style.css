@@ -278,13 +278,13 @@ body {
         position: absolute;
         top: 20px;
         right: 20px;
-        z-index: -1001;
+        z-index: 2000;
         transition: transform 0.3s ease;
 
     }
 
     .burger-nav {
-        display: none;
+        visibility: hidden;
         position: fixed;
         top: 0;
         right: 0;
@@ -299,7 +299,8 @@ body {
     }
 
     .burger-nav.show {
-        display: flex;
+        visibility: visible;
+        /* display: flex; */
         flex-direction: column;
         justify-content: center;
 
@@ -1021,7 +1022,7 @@ body {
         gap: 15px;
         flex-direction: column;
         right: 0;
-        top: 0;
+        top: -13px;
     }
 
     .service {
