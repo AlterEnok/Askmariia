@@ -111,6 +111,7 @@ body {
     visibility: hidden;
 }
 
+
 /* Фон с видео */
 .hero {
     position: relative;
@@ -1310,6 +1311,7 @@ body {
     display: inline-block;
     padding: 10px 25px;
     font-weight: 400;
+    padding-top: 12px;
     font-size: 17px;
     line-height: 151%;
     letter-spacing: 0.19em;
@@ -1435,9 +1437,10 @@ body {
     }
 
     .services__btn {
-        width: clamp(146px, 35vw, 193px);
+        width: clamp(146px, 32vw, 144px);
         height: clamp(41px, 8vw, 55px);
         font-size: clamp(12px, -1vw, 11px);
+        padding-top: 12px;
     }
 }
 
